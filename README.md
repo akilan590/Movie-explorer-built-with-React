@@ -35,5 +35,5 @@ npm start
 
 🧑‍💻 
   **Akilan N**
-- Frontend & Blockchain Developer
-- GitHub • LinkedIn
+- **Frontend & Blockchain Developer**
+  
