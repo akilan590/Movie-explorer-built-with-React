@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --font-heading: "Roboto Slab", serif;
+  --font-body: "Raleway", sans-serif;
+  --bg-color: #1e1f26;
+  --card-bg: #2a2b38;
+  --input-bg: #2e2f3e;
+  --primary-color: #ff7f50;
+  --accent-color: #9370db;
+  --text-light: #ffffff;
+  --text-soft: #cccccc;
+  --shadow-dark: rgba(0, 0, 0, 0.4);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-light);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+}
+
+.search {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  background: var(--input-bg);
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 15px var(--shadow-dark);
+  margin-bottom: 2rem;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  font-size: 1.2rem;
+  background: transparent;
+  color: var(--text-soft);
+  font-family: var(--font-body);
+  outline: none;
+  padding-right: 1rem;
+}
+
+.search img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.search img:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+}
+
+.movie {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 290px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.movie:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--shadow-dark);
+}
+
+.movie img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 1rem;
+  background-color: #333444;
+}
+
+.movie-info span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-bottom: 5px;
+}
+
+.movie-info h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.movie-year {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(147, 112, 219, 0.9);
   color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-bottom-right-radius: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.empty {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie {
+    width: 90%;
+  }
+
+  .search {
+    width: 100%;
   }
 }
